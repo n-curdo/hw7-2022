@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
 play_button.addEventListener("click", function() {
 	video.play();
 	// And update volume information
-	document.querySelector("#volume").innerHTML = video.volume * 100;
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
 
 pause_button.addEventListener("click", function(){
