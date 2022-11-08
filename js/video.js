@@ -19,6 +19,7 @@ window.addEventListener("load", function() {
 play_button.addEventListener("click", function() {
 	video.play();
 	// And update volume information
+	document.querySelector("#volume").innerHTML = video.volume * 100;
 });
 
 pause_button.addEventListener("click", function(){
@@ -34,7 +35,6 @@ slower_button.addEventListener("click", function(){
 
 faster_button.addEventListener("click", function(){
 	//increase current video speed each time clicked
-		//change by an amount proportional to slow down
 	video.playbackRate = video.playbackRate / 0.9;
 	//log new speed to console
 	console.log(video.playbackRate);
@@ -69,7 +69,6 @@ mute_button.addEventListener("click", function(){
 video_slider.addEventListener("change", function(){
 	video.volume = video_slider.value / 100;
 	document.querySelector("#volume").innerHTML = video.volume * 100;
-	console.log(video.volume);
 });
 
 vintage_button.addEventListener("click", function(){
