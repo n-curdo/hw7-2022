@@ -7,6 +7,7 @@ var skip_button = document.querySelector("#skip");
 var mute_button = document.querySelector("#mute");
 var vintage_button = document.querySelector("#vintage");
 var orig_button = document.querySelector("#orig");
+var video_slider = document.querySelector("#slider");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -45,6 +46,7 @@ skip_button.addEventListener("click", function(){
 	video.currentTime = video.currentTime + 10;
 	if(video.currentTime >= video.duration){
 		video.currentTime = 0;
+		video.pause();
 	}
 	//log current location of video
 	console.log(video.currentTime);
@@ -64,6 +66,11 @@ mute_button.addEventListener("click", function(){
 
 //Volume slider:
 // change volume based on the slider and update volume information
+video_slider.addEventListener("change", function(){
+	video.volume = video_slider.value / 100;
+	document.querySelector("#volume").innerHTML = video.volume * 100;
+	console.log(video.volume);
+});
 
 vintage_button.addEventListener("click", function(){
 	//utilize existing oldschool class on video element?
