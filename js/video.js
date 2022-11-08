@@ -68,7 +68,7 @@ mute_button.addEventListener("click", function(){
 // change volume based on the slider and update volume information
 video_slider.addEventListener("change", function(){
 	video.volume = video_slider.value / 100;
-	document.querySelector("#volume").innerHTML = video.volume * 100;
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 });
 
 vintage_button.addEventListener("click", function(){
